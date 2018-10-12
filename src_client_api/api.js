@@ -15,7 +15,7 @@
 var RemixApi = new function(){
 
 	this.ready = false;
-	this.apiDomain = 'http://localhost:11330';
+	this.apiDomain = '127.0.0.1:11331';
 	this.timeoutErrorTime = 10000;
 	this.timeoutError = 10000;
 

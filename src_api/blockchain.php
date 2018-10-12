@@ -55,7 +55,7 @@ function createOptimizedBock($startHeight, $endHeight){
 	$blockTimes = array();
 	
 	for($height = $startHeight; $height < $endHeight; ++$height){
-		$body = json_encode(array("jsonrpc" => "2.0", "id" => "0", "method" => "get_block", "params" => array("height" => $height)));
+		$body = json_encode(array("jsonrpc" => "2.0", "id" => "0", "method" => "getblock", "params" => array("height" => $height)));
 		
 		curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_URL => 'http://'.$daemonAddress.':'.$rpcPort.'/json_rpc', CURLOPT_POST => 1, CURLOPT_POSTFIELDS => $body));
 		

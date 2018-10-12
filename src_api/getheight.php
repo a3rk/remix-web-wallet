@@ -18,7 +18,7 @@ include 'config.php';
 $curl = curl_init();
 
 $body = json_encode(array());
-curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_URL => 'http://'.$daemonAddress.':'.$rpcPort.'/getheight'));
+curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_URL => $daemonAddress.':'.$rpcPort.'/getheight'));
 $resp = curl_exec($curl);
 curl_close($curl);
 //var_dump($resp);

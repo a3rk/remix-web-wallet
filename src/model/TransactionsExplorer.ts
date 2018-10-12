@@ -523,7 +523,8 @@ export class TransactionsExplorer {
 			console.log("Selected outs:", usingOuts);
 			if (usingOuts.length > 1) {
 				let newNeededFee = JSBigInt(Math.ceil(cnUtil.estimateRctSize(usingOuts.length, mixin, 2) / 1024)).multiply(feePerKB).multiply(fee_multiplayer);
-				totalAmount = totalAmountWithoutFee.add(newNeededFee);
+				//Explicitly setting to 0.01 for flat RMX transaction fee
+                    newNeededFee = 0.01;totalAmount = totalAmountWithoutFee.add(newNeededFee);
 				//add outputs 1 at a time till we either have them all or can meet the fee
 				while (usingOuts_amount.compare(totalAmount) < 0 && unusedOuts.length > 0) {
 					let out = pop_random_value(unusedOuts);
@@ -539,7 +540,9 @@ export class TransactionsExplorer {
 
 			// neededFee = neededFee / 3 * 2;
 
-			console.log('using amount of ' + usingOuts_amount + ' for sending ' + totalAmountWithoutFee + ' with fees of ' + (neededFee / 1000000000000));
+		
+              
+               console.log('using amount of ' + usingOuts_amount + ' for sending ' + totalAmountWithoutFee + ' with fees of ' + (neededFee / 1000000000000));
 			confirmCallback(totalAmountWithoutFee, neededFee).then(function () {
 				if (usingOuts_amount.compare(totalAmount) < 0) {
 					console.log("Not enough spendable outputs / balance too low (have "
