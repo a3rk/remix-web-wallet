@@ -1,0 +1,21 @@
+{
+  "name": "remixwebwallet",
+  "version": "1.0.0",
+  "description": "Fully client-side web wallet for Remix (RMX)",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^2.9.2",
+    "workbox-build": "^3.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a3rk/remix-web-wallet.git"
+  },
+  "author": "Gnock",
+  "license": "BSD-3",
+  "bugs": {
+    "url": "https://github.com/a3rk/remix-web-wallet/issues"
+  },
+  "homepage": "https://github.com/a3rk/remix-web-wallet#readme"
+}
